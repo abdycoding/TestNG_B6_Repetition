@@ -1,0 +1,17 @@
+TestNG Nedir ?
+1 tane test yazdık ve onu çalıştırdık
+
+JUnit lib ekledik projemize
+@Test, assert, Annotation
+
+JUnit kimin için developer Unit Testleri için
+Java Unit
+Testerler da JUnit i kullandı
+Testerlar için JUnit yetersiz kaldı
+
+Bunun üzerine 2 tane arkadaş çok üzüldü
+Testter lara uygun nasıl bir yeni nesil
+JUnit nasıl yazarız deyip, testNG
+JUnit-> gelişmiş ve Test için uyugn olan yeni
+nesli -> testNG
+testNG -> Test organizatörü
