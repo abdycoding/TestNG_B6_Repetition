@@ -1,13 +1,13 @@
 package day2;
 
 import Utility.Basedriver;
-import Utility.tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 
 public class _02_Task extends Basedriver {
@@ -65,29 +65,23 @@ public class _02_Task extends Basedriver {
     @Test(dependsOnMethods = {"adresEkle"})
     public void adresEdit() {
 
-        WebElement yeniadres = driver.findElement(newAdress);
-        yeniadres.click();
+        List<WebElement> EditAll=driver.findElements(By.linkText("Edit"));
+        WebElement edit=EditAll.get(EditAll.size()-1);
+     //   WebElement edit= driver.findElement(By.xpath("(//a[text()='Edit'])[2]"));
+        edit.click();
+
+
         WebElement isim = driver.findElement(fname);
+        isim.clear();
         isim.sendKeys("Leo");
         WebElement soyisim = driver.findElement(sname);
+        soyisim.clear();
         soyisim.sendKeys("Messi");
-        WebElement sirket = driver.findElement(company);
-        sirket.sendKeys("Realmadrid");
-        WebElement sokak = driver.findElement(adress1);
-        sokak.sendKeys("Madrid, Street 4");
-        WebElement sokak2 = driver.findElement(adress2);
-        sokak2.sendKeys("Spain");  WebElement sehir=driver.findElement(city);
-        sehir.sendKeys("Madrid");
-
-        WebElement posta = driver.findElement(postCode);
-        posta.sendKeys("552200");
         WebElement ulke = driver.findElement(country);
         Select sec = new Select(ulke);
-        tools.bekle(2);
         sec.selectByVisibleText("Spain");
         WebElement ulke2 = driver.findElement(state);
         Select sec2 = new Select(ulke2);
-        tools.bekle(2);
         sec2.selectByVisibleText("Madrid");
         WebElement devam = driver.findElement(ct);
         devam.click();
@@ -95,7 +89,10 @@ public class _02_Task extends Basedriver {
 
     @Test(dependsOnMethods = {"adresEkle","adresEdit"}, alwaysRun = true)
     public void adresSil() {
-        WebElement sil= driver.findElement(By.xpath("(//a[text()='Delete'])[2]"));
+
+        List<WebElement> DeleteAll =driver.findElements(By.linkText("Delete"));
+        WebElement sil= DeleteAll.get(DeleteAll.size()-1);
+//        WebElement sil= driver.findElement(By.xpath("(//a[text()='Delete'])[2]"));
         sil.click();
 
         WebElement success= driver.findElement(By.xpath("//*[text()=' Your address has been successfully deleted']"));

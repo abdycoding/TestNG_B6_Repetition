@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="My Suit">
+    <test name="My Test 1">
+        <parameter name="message" value="Hello Testing WOrld 2"></parameter>
+        <classes>
+            <class name="day4._01_ContactUsParameter"></class>
+        </classes>
+    </test>
+</suite>

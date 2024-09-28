@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="My Suit">
+    <test name="My Test 1">
+        <parameter name="searchedText" value="mac"></parameter>
+        <parameter name="browserType" value="firefox"></parameter>
+
+        <classes>
+            <class name="day4._03_SearchCrossBrowser"></class>
+        </classes>
+    </test>
+    <test name="Test 2">
+        <parameter name="searchedText" value="samsung"></parameter>
+        <parameter name="browserType" value="edge"></parameter>
+        <classes>
+        <class name="day4._03_SearchCrossBrowser"></class>
+    </classes>
+    </test>
+</suite>
