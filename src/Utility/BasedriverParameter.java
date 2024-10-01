@@ -16,8 +16,8 @@ import org.testng.annotations.Parameters;
 import java.time.Duration;
 
 public class BasedriverParameter {
-    public static WebDriver driver;
-    public static WebDriverWait wait;
+    public  WebDriver driver;
+    public  WebDriverWait wait;
 
     @BeforeClass
     @Parameters("browserType")

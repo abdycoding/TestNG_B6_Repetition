@@ -4,7 +4,7 @@
 
     <test name="My Test 1">
         <parameter name="searchText" value="mac"></parameter>
-        <parameter name="browserTipi" value="firefox"></parameter>
+        <parameter name="browserType" value="firefox"></parameter>
 
         <classes>
             <class name="day4._03_SearchCrossBrowser"></class>
@@ -13,7 +13,7 @@
 
     <test name="My Test 2">
         <parameter name="searchText" value="samsung"></parameter>
-        <parameter name="browserTipi" value="edge"></parameter>
+        <parameter name="browserType" value="edge"></parameter>
 
         <classes>
             <class name="day4._03_SearchCrossBrowser"></class>

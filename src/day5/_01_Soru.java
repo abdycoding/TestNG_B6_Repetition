@@ -1,14 +1,15 @@
 package day5;
 
-import Utility.Basedriver;
+
 
 import Utility.BasedriverParameter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
+
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class _01_Soru extends BasedriverParameter {
@@ -24,8 +25,7 @@ public class _01_Soru extends BasedriverParameter {
    //pazartesi Gun05 alalım ve 01 diyelim
 */
     @Test
-    @Parameters({"browserType"})
-    public void Test(String browser) {
+    public void Test() {
         WebElement specials = driver.findElement(By.linkText("Specials"));
         specials.click();
 
@@ -45,9 +45,14 @@ public class _01_Soru extends BasedriverParameter {
                     "New price (" + newPrice + ") is not less than old price (" + oldPrice + ")");
         }
     }
-//    public void Test() {
-//        WebElement specials = driver.findElement(By.linkText("Specials"));
+//    @Test
+//    public void Test2() {
+//       WebElement specials = driver.findElement(By.linkText("Specials"));
 //        specials.click();
+//
+//
+//  List<Double> newprices=new ArrayList<>();
+//  List<Double> oldprices=new ArrayList<>();
 //
 //        double number = 0;
 //        double number2 = 0;
@@ -55,16 +60,30 @@ public class _01_Soru extends BasedriverParameter {
 //        for (WebElement a:oldprice) {
 //            String eskiprice = a.getText().substring(1);
 //            number = Double.parseDouble(eskiprice);
+//            newprices.add(number);
+//
 //        }
 //
 //        List<WebElement> newprice = driver.findElements(By.xpath("//span[@class='price-new']"));
 //        for (WebElement e:newprice) {
 //            String yenifiyat = e.getText().substring(1);
 //            number2 = Double.parseDouble(yenifiyat);
+//            oldprices.add(number2);
+//
 //        }
-//        if (number2 < number) {
-//            Assert.assertTrue(true, "New price is not greater than old price");
+////        if (number2 < number) {
+////            Assert.assertTrue(true, "New price is not greater than old price");
+////        }
+//
+//        for (int i = 0; i < oldprices.size(); i++) {
+//            double a=newprices.get( i);
+//            double b=oldprices.get(i);
+//            Assert.assertTrue(a<b, "New price is not greater than old price");
+//
 //        }
+
+
+
 //    }
 
 }
