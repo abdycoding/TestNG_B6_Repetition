@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="My Suit" >
+
+    <test name="My Test 1">
+
+        <parameter name="productName" value="ipod"></parameter>
+
+        <classes>
+            <class name="day7.task2"></class>
+        </classes>
+    </test>
+
+
+
+</suite>

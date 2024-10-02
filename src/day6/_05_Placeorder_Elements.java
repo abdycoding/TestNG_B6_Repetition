@@ -1,6 +1,7 @@
 package day6;
 
 import Utility.Basedriver;
+import Utility.tools;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -15,11 +16,16 @@ public class _05_Placeorder_Elements  {
     @FindBy(name="search") // driver.findElement(By)
     public WebElement searchInput;
 
+
     @FindBy(xpath = "//span[text()='Add to Cart']")
     public WebElement addToCArt;
 
+    @FindBy(xpath = "//a[@id='wishlist-total']")
+    public  WebElement wishlist;
+
     @FindBy(linkText = "Shopping Cart")
     public  WebElement shoppingCart;
+
 
     @FindBy(linkText = "Checkout")
     public WebElement checkOut;

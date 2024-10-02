@@ -18,4 +18,8 @@ public class tools {
         Assert.assertTrue(success.getText().toLowerCase().contains("success"), "Error 404");
 
     }
+    public static int getRandomIndex(int num) {
+        return (int) (Math.random() * num);
+    }
+
 }
