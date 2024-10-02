@@ -25,16 +25,28 @@ public class _06_task extends Basedriver {
 
 
     @Test
-    public  void  BrandTest(){
+    public void menuValidation() {
+        //Beklenen Listemiz
+        List<String> menuExpectedList = new ArrayList<>();  // String[] menu={"Desktops","",""};
+        menuExpectedList.add("Desktops");
+        menuExpectedList.add("Laptops & Notebooks");
+        menuExpectedList.add("Components");
+        menuExpectedList.add("Tablets");
+        menuExpectedList.add("Software");
+        menuExpectedList.add("Phones & PDAs");
+        menuExpectedList.add("Cameras");
+        menuExpectedList.add("MP3 Players");
 
-      WebElement brands= driver.findElement(By.linkText("Brands"));
-      brands.click();
+        //Web deki menu listemiz
+        List<WebElement> menuActualList=driver.findElements(By.xpath("//ul[@class='nav navbar-nav']/li"));
 
+        for (int i = 0; i < menuExpectedList.size(); i++) {
 
-       List< WebElement> harfler= driver.findElements(By.xpath(""));
-
-
-
+            Assert.assertEquals(
+                    menuActualList.get(i).getText(),
+                    menuExpectedList.get(i),
+                    "Menu beklendiği gibi değil!");
+        }
 
     }
 
