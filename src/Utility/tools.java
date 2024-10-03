@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.List;
+
 public class tools {
     public static void bekle(int sn) {
         try {
@@ -20,6 +22,18 @@ public class tools {
     }
     public static int getRandomIndex(int num) {
         return (int) (Math.random() * num);
+    }
+
+    public static boolean listContainsString(List<WebElement> list, String aranacakKelime ){
+        boolean urunBulundu=false;
+        for(WebElement urun : list)
+        {
+            if (urun.getText().equals(aranacakKelime)) {
+                urunBulundu = true;
+                break;
+            }
+        }
+        return  urunBulundu;
     }
 
 }

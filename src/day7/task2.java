@@ -37,12 +37,16 @@ public class task2 extends Basedriver {
         sre.ProductListAddWish.get(randomChoice).click(); // clicked to add Cart
 
         elements.wishlist.click();
-        boolean productFound = false;
-        for (WebElement productNames : sre.productListBasket) {
+//        boolean productFound = false;
+//        for (WebElement productNames : sre.productListBasket) {
+//
+//            if (productNames.getText().equals(clickedproductsname)) {
+//                productFound = true;
+//                break;
+//            }
+//        }
+//        Assert.assertTrue(productFound, "THe product has not been found");
+        boolean productFound= tools.listContainsString(sre.ProductListAddWish, clickedproductsname);
+        Assert.assertTrue(productFound, "THe product has not been found");
 
-            if (productNames.getText().equals(clickedproductsname)) {
-                productFound = true;
-                break;
-            }
-        }
-        Assert.assertTrue(productFound, "THe product has not been found");}}
+        }}
