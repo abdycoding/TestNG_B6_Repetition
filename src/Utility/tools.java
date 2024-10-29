@@ -24,16 +24,16 @@ public class tools {
         return (int) (Math.random() * num);
     }
 
-    public static boolean listContainsString(List<WebElement> list, String aranacakKelime ){
-        boolean urunBulundu=false;
+    public static boolean listContainsString(List<WebElement> list, String searchedWord ){
+        boolean productFound =false;
         for(WebElement urun : list)
         {
-            if (urun.getText().equals(aranacakKelime)) {
-                urunBulundu = true;
+            if (urun.getText().equals(searchedWord)) {
+                productFound = true;
                 break;
             }
         }
-        return  urunBulundu;
+        return productFound;
     }
 
 }

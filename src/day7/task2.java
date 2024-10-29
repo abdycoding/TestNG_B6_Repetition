@@ -29,12 +29,12 @@ public class task2 extends Basedriver {
 
         elements.searchInput.sendKeys(value + Keys.ENTER);
 
-        int randomChoice = tools.getRandomIndex(sre.ProductListAddWish.size());
+        int randomChoice = tools.getRandomIndex(sre.productListAddWish.size());
         System.out.println(randomChoice);
 
         //before clicking it let's get the name of the product
         String clickedproductsname = sre.productListCaption.get(randomChoice).getText();
-        sre.ProductListAddWish.get(randomChoice).click(); // clicked to add Cart
+        sre.productListAddWish.get(randomChoice).click(); // clicked to add Cart
 
         elements.wishlist.click();
 //        boolean productFound = false;
@@ -46,7 +46,7 @@ public class task2 extends Basedriver {
 //            }
 //        }
 //        Assert.assertTrue(productFound, "THe product has not been found");
-        boolean productFound= tools.listContainsString(sre.ProductListAddWish, clickedproductsname);
+        boolean productFound= tools.listContainsString(sre.productListAddWish, clickedproductsname);
         Assert.assertTrue(productFound, "THe product has not been found");
 
         }}

@@ -25,14 +25,20 @@ public class _01_Elements {
     }
 
     @FindBy(xpath = "//span[text()='Add to Cart']")
-    public List<WebElement> ProductListAddCart;
+    public List<WebElement> productListAddCart;
 
-
-    @FindBy(css = "[class='caption']>h4")
+    @FindBy(css = "[class='caption'] >h4")
     public List<WebElement> productListCaption;
 
-    @FindBy(xpath = "//table[@class='table table-bordered table-hover']//tr//td[@class='text-left']/a")
+    @FindBy(xpath = "//table[@class='table table-bordered']//td[@class='text-left']/a")
     public List<WebElement> productListBasket;
 
-    @FindBy(xpath = "//button[@data-original-title='Add to Wish List']")
-    public List<WebElement> ProductListAddWish;}
+    @FindBy(xpath = "//button[@data-original-title='Add to Wish List']/i")
+    public List<WebElement> productListAddWish;
+
+    @FindBy(linkText = "wish list")
+    public WebElement wishList;
+
+    @FindBy(css = "[class='table table-bordered table-hover'] td[class='text-left']>a")
+    public List<WebElement> productListWish;
+}

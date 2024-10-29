@@ -20,34 +20,34 @@ public class task1 extends Basedriver {
  */
 
     @Test
-    public void ProceedToCheckout() {
-        driver.manage().window().maximize();
-        _05_Placeorder_Elements elements = new _05_Placeorder_Elements();
-        _01_Elements sre=new _01_Elements();
+    public void addToCart()
+    {
+        Basedriver.addLog.info("addToCart testi başladı");
+        _05_Placeorder_Elements poe=new _05_Placeorder_Elements();
+        _01_Elements sre= new _01_Elements();
 
-        elements.searchInput.sendKeys("ipod" + Keys.ENTER);
+        poe.searchInput.sendKeys("ipod"+ Keys.ENTER);
 
-        int randomChoice=tools.getRandomIndex(sre.ProductListAddCart.size());
-        System.out.println(randomChoice);
+        int randomSecim= tools.getRandomIndex(sre.productListAddCart.size()); // 0,1,2,3
+        System.out.println(randomSecim);
 
-        //before clicking it let's get the name of the product
-        String clickedproductsname= sre.productListCaption.get(randomChoice).getText();
-        sre.ProductListAddCart.get(randomChoice).click(); // clicked to add Cart
+        //tıkaltmadan önce ürürnün ismini saklayalım
+        String tiklatilacakUrununAdi=sre.productListCaption.get(randomSecim).getText();
+        sre.productListAddCart.get(randomSecim).click(); // Add chart a tıklandı
 
-        elements.shoppingCart.click();
-        boolean productFound=false;
-        for (WebElement productNames: sre.productListBasket) {
+        poe.shoppingCart.click();
 
-        if (productNames.getText().equals(clickedproductsname)){
-            productFound=true;
-            break;}
-        }
-        Assert.assertTrue(productFound,"THe product has not been found");
+//        boolean urunBulundu=false;
+//        for(WebElement urun : sre.productListBasket)
+//        {
+//            if (urun.getText().equals(tiklatilacakUrununAdi)) {
+//                urunBulundu = true;
+//                break;
+//            }
+//        }
 
-
-
-
-           }
-       }
+        boolean urunBulundu=tools.listContainsString(sre.productListBasket, tiklatilacakUrununAdi); // yukarıdaki döngü metod yapıldı
+        Assert.assertTrue(urunBulundu,"Eklediğiniz sepette bulunamadı");
 
 
+    }}
